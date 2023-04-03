@@ -164,6 +164,10 @@ class UCF101_Dataset(Dataset):
         return torch.cat(video_tensor, 0), torch.cat(labels, 0)
 
 if __name__ == '__main__':
+    """
+        UCF101 Dataset 테스트
+        ViViT 모델 입/출력 테스트
+    """
     train, val, test = split_data("../data/UCF101/raw")
     test_dataset = UCF101_Dataset(train, "../data/UCF101/classInd.txt")
     v, c = test_dataset[1230]
