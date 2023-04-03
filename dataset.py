@@ -5,7 +5,7 @@ import random
 import torch
 import numpy as np
 from torch.utils.data import Dataset
-from augmentation import Compose, ResizeTransform, ToTensor
+from utils.augmentation import Compose, ResizeTransform, ToTensor
 
 """
     UCF101 데이터셋은 101개의 액션 카테고리를 가지는 비디오 데이터셋입니다.
@@ -176,7 +176,7 @@ if __name__ == '__main__':
         print(v.shape, c.shape)
         break
 
-    from vivit import ViViT
+    from models.vivit import ViViT
     net = ViViT(224, 16, 101, 16)
     o = net(v)
     print(o.shape)

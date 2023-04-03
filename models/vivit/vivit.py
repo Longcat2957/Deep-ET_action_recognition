@@ -3,8 +3,9 @@ from torch import nn, einsum
 import torch.nn.functional as F
 from einops import rearrange, repeat
 from einops.layers.torch import Rearrange
-from module import Attention, PreNorm, FeedForward
+from .module import Attention, PreNorm, FeedForward
 import numpy as np
+
 
 class Transformer(nn.Module):
     def __init__(self, dim, depth, heads, dim_head, mlp_dim, dropout = 0.):
